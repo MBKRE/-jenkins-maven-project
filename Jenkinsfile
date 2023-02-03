@@ -21,11 +21,10 @@ pipeline {
         }
         stage("Terraform Apply") {
             steps {
-                sh "terraform apply -auto-approve"
+                sh "terraform apply --auto-approve"
                 sleep 300
             }
         }
-    }
         stage('Test') {
             steps {
                 sh 'mvn -f hello-app/pom.xml test'
@@ -37,4 +36,3 @@ pipeline {
             }
         }
     }
-}
