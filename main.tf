@@ -53,7 +53,7 @@ resource "aws_route_table_association" "dev_public_rt" {
 }
 
 
-#Security Group for EC2
+#SecurityGroup for EC2
 resource "aws_security_group" "dev_sg" {
   vpc_id = aws_vpc.dev_vpc.id
 
