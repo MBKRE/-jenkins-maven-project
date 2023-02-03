@@ -9,24 +9,22 @@ pipeline {
         stage("Terraform Init") {
             steps {
                 sh "terraform init"
+                sleep 300
             }
         }
         stage("Terraform Plan") {
             steps {
                 sh "terraform plan"
+                sleep 300
             }
+            
         }
         stage("Terraform Apply") {
             steps {
                 sh "terraform apply -auto-approve"
+                sleep 300
             }
         }
-        post {
-                always {
-                    echo 'Waiting 300 seconds before running the next step'
-                    sleep 300
-                }
-            }
     }
         stage('Test') {
             steps {
