@@ -21,6 +21,13 @@ pipeline {
                 sh "terraform apply -auto-approve"
             }
         }
+        post {
+                always {
+                    echo 'Waiting 300 seconds before running the next step'
+                    sleep 300
+                }
+            }
+    }
         stage('Test') {
             steps {
                 sh 'mvn -f hello-app/pom.xml test'
