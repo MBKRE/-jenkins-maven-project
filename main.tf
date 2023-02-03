@@ -37,7 +37,6 @@ resource "aws_internet_gateway" "dev_ig" {
 resource "aws_route_table" "dev_pub_rt" {
   vpc_id = aws_vpc.dev_vpc.id
 
-
   route {
     cidr_block = "0.0.0.0/0"
     gateway_id = aws_internet_gateway.dev_ig.id
