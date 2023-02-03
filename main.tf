@@ -77,7 +77,7 @@ resource "aws_security_group" "dev_sg" {
 }
 
 #EC2 with userdata
-resource "aws_instance" "dev_ec2" {
+resource "aws_instance" "dev2_ec2" {
   ami                         = "ami-0aa7d40eeae50c9a9"
   instance_type               = "t2.micro"
   associate_public_ip_address = "true"
