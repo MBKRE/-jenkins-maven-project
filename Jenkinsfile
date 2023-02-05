@@ -27,7 +27,7 @@ pipeline {
         }
         stage('Build') {
             steps {
-                sh 'cd ./jenkins-maven-project/java-servlet-hello && mvn clean install'
+                sh 'cd ./java-servlet-hello && mvn clean install'
             }
                         
         }
