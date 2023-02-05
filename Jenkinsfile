@@ -9,13 +9,13 @@ pipeline {
         stage("Terraform Init") {
             steps {
                 sh "terraform init"
-                sleep 300
+                
             }
         }
         stage("Terraform Plan") {
             steps {
                 sh "terraform plan"
-                sleep 300
+               
             }
             
         }
