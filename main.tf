@@ -90,6 +90,7 @@ resource "aws_instance" "myfirsttec2" {
   ami                    = "ami-00874d747dde814fa"
   instance_type          = "t2.micro"
   subnet_id              = aws_subnet.hello_sub.id
+  associate_public_ip_address = "true"
   vpc_security_group_ids = [aws_security_group.hello_sg.id]
   key_name               = "bharat"
   user_data              = file("script_n.sh")
