@@ -84,7 +84,7 @@ resource "aws_instance" "myfirsttec2" {
 #ami is for ubuntu
   ami                    = "ami-00874d747dde814fa"
   instance_type          = "t2.micro"
-  vpc_security_group_ids = [aws_security_group.hello_sg.instance.id]
+  vpc_security_group_ids = [aws_security_group.hello_sg.id]
   key_name               = "bharat"
   user_data              = file("script_n.sh")
 
