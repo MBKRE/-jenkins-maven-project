@@ -1,8 +1,8 @@
 #!/bin/bash
 sudo su -
 sudo apt update -y
-sudo apt install wget
-sudo apt install openjdk-8-jdk
+sudo apt install wget -y
+sudo apt install openjdk-11-jdk -y
 
 export JAVA_HOME=$(readlink -f /usr/bin/java | sed "s:bin/java::")
 #echo "export JAVA_HOME=/usr/lib/jvm/java-7-oracle" >>~/.bashrc
