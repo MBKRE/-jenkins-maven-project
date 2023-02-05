@@ -3,7 +3,7 @@ pipeline {
     stages {
        stage('Git Checkout') {
             steps {
-                git url: 'https://github.com/MBKRE/-jenkins-maven-project.git', branch: 'master'
+                git url: 'https://github.com/MBKRE/jenkins-maven-project.git', branch: 'master'
             }
         }
         stage("Terraform Init") {
@@ -27,7 +27,7 @@ pipeline {
         }
         stage('Build') {
             steps {
-                sh 'mvn clean install'
+                sh 'cd ./jenkins-maven-project/java-servlet-hello && mvn clean install'
             }
                         
         }
