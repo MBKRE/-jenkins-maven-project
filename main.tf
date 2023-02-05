@@ -3,12 +3,14 @@ provider "aws" {
 #region where you want to make your server
   region     = "us-east-1"
 #uses jenkins instance role for terraform execution
-    assume_role {
-    role_arn     = "arn:aws:iam::063683088227:role/jenkins-role"
-  }
+   access_key = var.accesskey
+   secret_key = var.secretkey
   
 }
-
+variable "accesskey" {
+}
+variable "secretkey" {
+}
 #VPC
 resource "aws_vpc" "hello_vpc" {
   cidr_block = "10.1.0.0/16"
