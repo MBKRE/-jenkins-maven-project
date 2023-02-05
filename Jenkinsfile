@@ -7,11 +7,7 @@ pipeline {
             }
         }
         
-         stage('Git Checkout') {
-            steps {
-                sh prep_jenkins.sh
-            }
-        }
+
        
         stage("Terraform Init") {
             steps {
