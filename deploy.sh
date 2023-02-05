@@ -1,4 +1,4 @@
 #!/bin/sh
 
 export public_ip=`terraform output "public_ip"|tr -d '"'`
-scp ./target/hello.war ec2-user@$public_ip:$TOMCAT_HOME/webapps
+scp -i ${SSH_KEY_UBUNTU} ./target/hello.war ubuntu@$public_ip:/root/webapps
