@@ -39,6 +39,9 @@ pipeline {
         {
             steps {
                 
+                withCredentials(bindings: [sshUserPrivateKey(credentialsId: '	52163aec-3253-41a8-a326-880ec75a4858', \
+                                                             keyFileVariable: 'SSH_KEY_UBUNTU')]) {
+                
                 sh deploy.sh
                 
             }
