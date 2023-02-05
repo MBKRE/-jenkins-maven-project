@@ -30,7 +30,7 @@ pipeline {
         }
         stage('Build') {
             steps {
-                sh 'cd ./java-servlet-hello && mvn clean install'
+                sh 'cd ./java-servlet-hello && /home/ec2-user/java8/apache-maven-3.8.7/bin/mvn clean install'
             }
                         
         }
