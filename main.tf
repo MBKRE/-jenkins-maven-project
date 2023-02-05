@@ -3,6 +3,9 @@ provider "aws" {
 #region where you want to make your server
   region     = "us-east-1"
 #uses jenkins instance role for terraform execution
+    assume_role {
+    role_arn     = "arn:aws:iam::063683088227:role/jenkins-role"
+  }
   
 }
 
