@@ -59,7 +59,7 @@ resource "aws_route_table_association" "hello_public_rt" {
 
 #Security Group for EC2
 resource "aws_security_group" "hello_sg" {
-  vpc_id = aws_vpc.dev_vpc.id
+  vpc_id = aws_vpc.hello_vpc.id
 
   ingress {
     from_port   = 80
