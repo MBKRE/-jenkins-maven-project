@@ -25,14 +25,19 @@ pipeline {
                 sleep 300
             }
         }
-        stage('Test') {
+        stage('Build') {
             steps {
-                sh 'mvn -f hello-app/pom.xml test'
+                sh 'mvn clean install'
             }
-            post {
-                always {
-                    junit 'hello-app/target/surefire-reports/*.xml'
-                }
+                        
+        }
+        
+        stage( 'Deploy')
+        {
+            steps {
+                
+                sh 'export public_ip=`terraform output "public_ip"|tr -d '"'`'
+                 sh 'scp ./target/hello.war ec2-user@$public_ip:$TOMCAT_HOME/webapps'
             }
         }
     }
