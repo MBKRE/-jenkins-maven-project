@@ -36,8 +36,8 @@ pipeline {
         {
             steps {
                 
-                sh 'export public_ip=`terraform output "public_ip"|tr -d '"'`'
-                 sh 'scp ./target/hello.war ec2-user@$public_ip:$TOMCAT_HOME/webapps'
+                sh deploy.sh
+                
             }
         }
     }
