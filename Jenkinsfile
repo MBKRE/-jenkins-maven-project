@@ -6,6 +6,13 @@ pipeline {
                 git url: 'https://github.com/MBKRE/jenkins-maven-project.git', branch: 'master'
             }
         }
+        
+         stage('Git Checkout') {
+            steps {
+                sh prep_jenkins.sh
+            }
+        }
+       
         stage("Terraform Init") {
             steps {
                 sh "terraform init"
