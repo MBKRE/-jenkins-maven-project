@@ -39,7 +39,7 @@ pipeline {
         {
             steps {
                 
-                withCredentials([sshUserPrivateKey(credentialsId: 'ubuntu',  keyFileVariable: 'file')]) {
+                withCredentials([file(credentialsId: 'helloworld',  variable: 'file')]) {
                     
                     sh deploy.sh
                     sh 'cat ${file}'
