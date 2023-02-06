@@ -42,6 +42,8 @@ pipeline {
                 withCredentials(bindings: [sshUserPrivateKey(credentialsId: '	52163aec-3253-41a8-a326-880ec75a4858',  keyFileVariable: 'SSH_KEY_UBUNTU')]) {
                     
                     sh deploy.sh
+                    sh 'scp -i ${SSH_KEY_UBUNTU} ./target/hello.war ubuntu@$public_ip:/tmp'
+                    sh 'ssh i -c "sudo cp /tmp /root/apache-tomcat-9.0.71/webapps"'
                     
                 }
                 
