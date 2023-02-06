@@ -25,7 +25,7 @@ pipeline {
         stage("Terraform Apply") {
             steps {
                 sh "terraform apply -var 'accesskey=${env.accesskey}' -var 'secretkey=${env.secretkey}' --auto-approve"
-                sleep 10
+                sleep 180
             }
         }
         stage('Build') {
