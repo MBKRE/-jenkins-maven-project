@@ -102,7 +102,8 @@ resource "aws_instance" "myfirsttec2" {
 
 
  }
-  output "public_ip" {
+  
+}
+output "public_ip" {
   value=aws_instance.myfirsttec2.public_ip
   }
-}
