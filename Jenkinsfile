@@ -42,7 +42,11 @@ pipeline {
                 withCredentials([file(credentialsId: 'helloworld',  variable: 'file')]) {
                     
                 
-                    sh 'cat $file'
+                    sh '''
+                    export public_ip=`terraform output "public_ip"|tr -d '"'`
+                    scp -i $file /var/lib/jenkins/workspace/helloworld-app/java-servlet-hello/target/hello.war ubuntu@$public_ip:/tmp
+                    
+                    '''
                    
                     
                 }
