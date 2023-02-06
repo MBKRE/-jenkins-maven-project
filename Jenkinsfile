@@ -42,7 +42,7 @@ pipeline {
                 withCredentials([file(credentialsId: 'helloworld',  variable: 'file')]) {
                     
                 
-                    sh 'file $file'
+                    sh 'cat $file'
                    
                     
                 }
