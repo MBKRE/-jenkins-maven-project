@@ -39,10 +39,10 @@ pipeline {
         {
             steps {
                 
-                withCredentials([sshUserPrivateKey(credentialsId: 'ubuntu',  keyFileVariable: 'SSH_KEY_UBUNTU')]) {
+                withCredentials([sshUserPrivateKey(credentialsId: 'ubuntu',  keyFileVariable: 'file')]) {
                     
                     sh deploy.sh
-                    sh 'cat $SSH_KEY_UBUNTU'
+                    sh 'cat ${file}'
                     sh 'scp -i $SSH_KEY_UBUNTU ./target/hello.war ubuntu@3.235.15.108:/tmp'
                     sh 'ssh i $SSH_KEY_UBUNTU -c "sudo cp /tmp /root/apache-tomcat-9.0.71/webapps" ubuntu@3.235.15.108'
                     
