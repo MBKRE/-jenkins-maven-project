@@ -46,7 +46,7 @@ pipeline {
                     cd /var/lib/jenkins/workspace/helloworld-app
                     export public_ip=`terraform output "public_ip"|tr -d '"'`
                     scp -i $file -o StrictHostKeyChecking=no /var/lib/jenkins/workspace/helloworld-app/java-servlet-hello/target/hello.war ubuntu@$public_ip:/tmp
-                    ssh -i $file -o StrictHostKeyChecking=no ubuntu@$public_ip -c "sudo cp /tmp /root/apache-tomcat-9.0.71/webapps/"
+                    ssh -i $file -o StrictHostKeyChecking=no ubuntu@$public_ip -c "sudo cp /tmp/hello.war /root/apache-tomcat-9.0.71/webapps/"
                     '''
                    
                     
