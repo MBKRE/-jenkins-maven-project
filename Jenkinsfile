@@ -43,7 +43,7 @@ pipeline {
                     
                     sh deploy.sh
                     
-                    ]
+                }
                 
                 
                 
