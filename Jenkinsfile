@@ -42,7 +42,7 @@ pipeline {
                 withCredentials([file(credentialsId: 'helloworld',  variable: 'file')]) {
                     
                 
-                    sh 'use ${file}'
+                    sh 'use $file'
                    
                     
                 }
