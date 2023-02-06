@@ -13,5 +13,5 @@ tar -vxzf apache-maven-3.8.7-bin.tar.gz
 export PATH=$PATH:/root/apache-maven-3.8.7-bin/bin
 sudo wget https://dlcdn.apache.org/tomcat/tomcat-9/v9.0.71/bin/apache-tomcat-9.0.71.tar.gz
 tar -vxzf apache-tomcat-9.0.71.tar.gz
-./root/apache-tomcat-9.0.71/bin/startup.sh
+sudo /root/apache-tomcat-9.0.71/bin/startup.sh
 
